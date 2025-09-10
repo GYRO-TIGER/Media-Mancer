@@ -24,3 +24,16 @@ Media Mancer is a web-based YouTube downloader built using Python (`yt-dlp`) and
 - `server.js` – Express server acting as backend
 - `public/` – Contains frontend files (HTML, JS, CSS)
 
+
+## Folder structure
+- public
+   favicon.ico
+   index.html
+   index.js
+   nature3.jpg
+   #style.css
+-mediaDownloaderMain.py
+-package-lock.json
+-package.json
+-README.MD
+-server.js
