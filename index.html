@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Mancer</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>  
+    <div class="container">
+        <h2>🎥 Media Mancer</h2>
+        <input type="text" id="videoLink" placeholder="Enter YouTube Video URL">
+        <select id="quality">
+            <option value="bestvideo+bestaudio">Best Available</option>
+            <option value="bv*[height=1080]+ba">1080p</option>
+            <option value="bv*[height=720]+ba">720p</option>
+            <option value="bv*[height=480]+ba">480p</option>
+            <option value="bv*[height=360]+ba">360p</option>
+        </select>
+        <button onclick="startDownload('video')">📺 Download Video</button>
+        <button onclick="startDownload('audio')">🎵 Download Audio</button>
+        <!-- <p class="status" id="status"></p> -->
+        <div id="progress-container">
+            <h4 id="text">Turn Links Into Legacy.</h4>
+        </div>
+    </div>
+
+    <div id="downloadModal" class="modal">
+        <div class="modal-content">
+            <p id="modal-progress-text">Starting download...</p>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
