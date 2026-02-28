@@ -10,9 +10,11 @@ WORKDIR /files
 
 # Copy node.js dependencies
 COPY package*.json ./
+COPY requirements.txt ./
 
 # Install node.js dependencies
 RUN npm install --production
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the rest of the application code
 COPY . .
