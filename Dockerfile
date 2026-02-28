@@ -41,5 +41,8 @@ COPY . .
 # 9. Expose your Node port
 EXPOSE 5500
 
+# Create the downloads directory
+RUN mkdir -p /app/downloads && chmod 777 /app/downloads
+
 # 10. Start the server
 CMD ["node", "server.js"]
