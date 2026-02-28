@@ -23,7 +23,7 @@ RUN apt-get update && apt-get install -y \
 RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.12 1
 
 # 5. Set working directory
-WORKDIR /app
+WORKDIR /files
 
 # 6. Install Node dependencies
 COPY package*.json ./
@@ -42,7 +42,7 @@ COPY . .
 EXPOSE 5500
 
 # Create the downloads directory
-RUN mkdir -p /app/downloads && chmod 777 /app/downloads
+RUN mkdir -p /files/downloads && chmod 777 /files/downloads
 
 # 10. Start the server
 CMD ["node", "server.js"]
