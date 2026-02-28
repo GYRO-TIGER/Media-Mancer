@@ -1,8 +1,9 @@
-FROM node:18-bullseye
+FROM python:3.12.8-slim
 
-# Install python
-RUN apt-get update && \
-    apt-get install -y python3 python3-pip && \
+# Install Node 18
+RUN apt-get update && apt-get install -y curl gnupg && \
+    curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && \
+    apt-get install -y nodejs && \
     rm -rf /var/lib/apt/lists/*
 
 # Working directory
