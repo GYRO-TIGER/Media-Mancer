@@ -4,7 +4,7 @@ import json
 import os
 import time
 
-BASE_DOWNLOAD_PATH = os.path.join(os.path.expanduser("~"), "Downloads", "MediaMancer Downloads")
+BASE_DOWNLOAD_PATH = os.path.join(os.getcwd(), "downloads")
 os.makedirs(BASE_DOWNLOAD_PATH, exist_ok=True)  
 
 def progress_hook(d):
