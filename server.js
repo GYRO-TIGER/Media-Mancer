@@ -15,7 +15,7 @@ app.post('/download', (req, res) => {
     console.log("Recieved a download request");
     const { url, download_type, quality } = req.body;
 
-    let args = ['mediaDownloaderMain.py', url, download_type, quality];
+    let args = [path.join(__dirname, 'mediaDownloaderMain.py'), url, download_type, quality];
 
     const python = spawn('python3', args);
 
