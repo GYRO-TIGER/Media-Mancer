@@ -4,11 +4,11 @@ const { spawn } = require('child_process');
 const app = express();
 const PORT = 5500;
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'Public')));
 app.use(express.json());
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.sendFile(path.join(__dirname, 'Public', 'index.html'));
 });
 
 app.post('/download', (req, res) => {
