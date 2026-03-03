@@ -17,7 +17,7 @@ app.post('/download', (req, res) => {
 
     let args = [path.join(__dirname, 'mediaDownloaderMain.py'), url, download_type, quality];
 
-    const python = spawn('python3', args);
+    const python = spawn('python3', args, { cwd: __dirname });
 
     res.setHeader('Content-Type', 'text/event-stream');
     res.setHeader('Cache-Control', 'no-cache');
@@ -38,5 +38,5 @@ app.post('/download', (req, res) => {
 });
 
 app.listen(PORT,'0.0.0.0', () => {
-    console.log(`✅ Server running at http://127.0.0.1:${PORT}`);
+    console.log(`✅ Server running at port:${PORT}`);
 });
